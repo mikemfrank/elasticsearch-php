@@ -107,6 +107,7 @@ class Search extends AbstractEndpoint
      */
     public function getMethod()
     {
-        return 'GET';
+        // Our proxies do not allow request bodies with GET requests
+        return 'POST';
     }
 }

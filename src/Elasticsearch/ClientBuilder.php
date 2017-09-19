@@ -505,6 +505,9 @@ class ClientBuilder
                 }
             }
 
+            // Accessing the ES API through Kibana requires this header
+            $this->connectionParams['client']['headers']['kbn-version'] = ['5.4.1'];
+
             $this->connectionFactory = new ConnectionFactory($this->handler, $this->connectionParams, $this->serializer, $this->logger, $this->tracer);
         }
 
